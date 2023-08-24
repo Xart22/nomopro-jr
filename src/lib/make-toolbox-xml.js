@@ -18,60 +18,56 @@ const motion = function (isInitialSetup, isStage, targetId) {
         <label text="${stageSelected}"></label>
         `
                 : `
-        <block type="motion_movesteps">
+        <block type="motion_moveright">
             <value name="STEPS">
                 <shadow type="math_number">
-                    <field name="NUM">10</field>
+                    <field name="NUM">1</field>
                 </shadow>
             </value>
         </block>
+        <block type="motion_moveleft">
+            <value name="STEPS">
+                <shadow type="math_number">
+                    <field name="NUM">1</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="motion_moveup">
+            <value name="STEPS">
+                <shadow type="math_number">
+                    <field name="NUM">1</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="motion_movedown">
+            <value name="STEPS">
+                <shadow type="math_number">
+                    <field name="NUM">1</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="motion_hop">
+        <value name="STEPS">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+        </block>
+        <block type="motion_go_home"></block>
         <block type="motion_turnright">
             <value name="DEGREES">
                 <shadow type="math_number">
-                    <field name="NUM">15</field>
+                    <field name="NUM">1</field>
                 </shadow>
             </value>
         </block>
         <block type="motion_turnleft">
             <value name="DEGREES">
                 <shadow type="math_number">
-                    <field name="NUM">15</field>
+                    <field name="NUM">1</field>
                 </shadow>
             </value>
-        </block>
-        ${blockSeparator}
-        <block type="motion_changexby">
-            <value name="DX">
-                <shadow type="math_number">
-                    <field name="NUM">10</field>
-                </shadow>
-            </value>
-        </block>
-        <block type="motion_setx">
-            <value name="X">
-                <shadow id="setx" type="math_number">
-                    <field name="NUM">0</field>
-                </shadow>
-            </value>
-        </block>
-        <block type="motion_changeyby">
-            <value name="DY">
-                <shadow type="math_number">
-                    <field name="NUM">10</field>
-                </shadow>
-            </value>
-        </block>
-        <block type="motion_sety">
-            <value name="Y">
-                <shadow id="sety" type="math_number">
-                    <field name="NUM">0</field>
-                </shadow>
-            </value>
-        </block>
-        ${blockSeparator}
-        <block id="${targetId}_xposition" type="motion_xposition"/>
-        <block id="${targetId}_yposition" type="motion_yposition"/>
-        <block id="${targetId}_direction" type="motion_direction"/>`
+        </block>`
         }
         ${categorySeparator}
     </category>
