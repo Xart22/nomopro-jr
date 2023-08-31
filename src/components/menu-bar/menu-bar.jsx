@@ -101,7 +101,7 @@ import linkSocketIcon from "./icon--link-socket.svg"; // eslint-disable-line no-
 import communityIcon from "./icon--community.svg";
 import wikiIcon from "./icon--wiki.svg";
 
-import scratchLogo from "./scratch-logo.svg";
+import scratchLogo from "./nomokit-jr.png";
 
 import sharedMessages from "../../lib/shared-messages";
 
@@ -559,7 +559,7 @@ class MenuBar extends React.Component {
                 <div className={styles.mainMenu}>
                     <div className={classNames(styles.menuBarItem)}>
                         <img
-                            alt="OpenBlock"
+                            alt="Nomokit-Jr"
                             className={classNames(styles.scratchLogo, {
                                 [styles.clickable]:
                                     typeof this.props.onClickLogo !==
@@ -665,7 +665,7 @@ class MenuBar extends React.Component {
                                             sharedMessages.loadFromComputerTitle
                                         )}
                                     </MenuItem>
-                                    <SB3Downloader>
+                                    {/* <SB3Downloader>
                                         {(
                                             className,
                                             downloadProjectCallback
@@ -683,12 +683,12 @@ class MenuBar extends React.Component {
                                                 />
                                             </MenuItem>
                                         )}
-                                    </SB3Downloader>
+                                    </SB3Downloader> */}
                                 </MenuSection>
                             </MenuBarMenu>
                         </div>
-                    )}{" "}
-                    {/* <div
+                    )}
+                    <div
                         className={classNames(
                             styles.menuBarItem,
                             this.props.isRealtimeMode
@@ -732,7 +732,7 @@ class MenuBar extends React.Component {
                                     </MenuItem>
                                 )}
                             </DeletionRestorer>
-                            <MenuSection>
+                            {/* <MenuSection>
                                 <TurboMode>
                                     {(toggleTurboMode, { turboMode }) => (
                                         <MenuItem onClick={toggleTurboMode}>
@@ -752,10 +752,58 @@ class MenuBar extends React.Component {
                                         </MenuItem>
                                     )}
                                 </TurboMode>
-                            </MenuSection>
+                            </MenuSection> */}
                         </MenuBarMenu>
-                    </div> */}
-                    <Divider className={classNames(styles.divider)} />
+                    </div>
+                    <div style={{ padding: "10vw" }} />
+
+                    <div className={styles.fileMenu}>
+                        {this.props.canEditTitle ? (
+                            <div
+                                className={classNames(
+                                    styles.menuBarItem,
+                                    styles.growable
+                                )}
+                            >
+                                <MenuBarItemTooltip enable id="title-field">
+                                    <ProjectTitleInput
+                                        className={classNames(
+                                            styles.titleFieldGrowable
+                                        )}
+                                    />
+                                </MenuBarItemTooltip>
+                            </div>
+                        ) : this.props.authorUsername &&
+                          this.props.authorUsername !== this.props.username ? (
+                            <AuthorInfo
+                                className={styles.authorInfo}
+                                imageUrl={this.props.authorThumbnailUrl}
+                                projectTitle={this.props.projectTitle}
+                                userId={this.props.authorId}
+                                username={this.props.authorUsername}
+                            />
+                        ) : null}
+                        {this.props.canManageFiles && (
+                            <SB3Downloader>
+                                {(className, downloadProjectCallback) => (
+                                    <div
+                                        className={classNames(
+                                            styles.menuBarItem,
+                                            styles.hoverable
+                                        )}
+                                        onClick={this.getSaveToComputerHandler(
+                                            downloadProjectCallback
+                                        )}
+                                    >
+                                        <img
+                                            className={styles.saveIcon}
+                                            src={saveIcon}
+                                        />
+                                    </div>
+                                )}
+                            </SB3Downloader>
+                        )}
+                    </div>
                     {/* <div
                         className={classNames(
                             styles.menuBarItem,

@@ -152,20 +152,21 @@ const looks = function (
             </block>
             <block type="looks_nextbackdrop"/>
             ${blockSeparator}
-            <block type="looks_changesizeby">
-                <value name="CHANGE">
+            <block type="looks_grow">
+                <value name="SIZE">
                     <shadow type="math_number">
                         <field name="NUM">10</field>
                     </shadow>
                 </value>
             </block>
-            <block type="looks_setsizeto">
+            <block type="looks_shirink">
                 <value name="SIZE">
                     <shadow type="math_number">
-                        <field name="NUM">100</field>
+                        <field name="NUM">10</field>
                     </shadow>
                 </value>
             </block>
+            <block type="looks_reset_size"></block>
         `
         }
         ${blockSeparator}
@@ -200,17 +201,6 @@ const looks = function (
                     </shadow>
                 </value>
             </block>
-        `
-        }
-        ${
-            isStage
-                ? `
-            <block id="backdropnumbername" type="looks_backdropnumbername"/>
-        `
-                : `
-            <block id="${targetId}_costumenumbername" type="looks_costumenumbername"/>
-            <block id="backdropnumbername" type="looks_backdropnumbername"/>
-            <block id="${targetId}_size" type="looks_size"/>
         `
         }
         ${categorySeparator}

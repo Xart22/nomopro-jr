@@ -281,6 +281,7 @@ const GUIComponent = (props) => {
                             onClickClearCache={onClickClearCache}
                             onClickInstallDriver={onClickInstallDriver}
                         />
+
                         <Box className={styles.bodyWrapper}>
                             <Box className={styles.flexWrapper}>
                                 <Box className={styles.editorWrapper}>
@@ -375,30 +376,30 @@ const GUIComponent = (props) => {
                                                 />
                                             </Box>
                                             {/* <Box
+                                            className={
+                                                styles.extensionButtonContainer
+                                            }
+                                        >
+                                            <button
                                                 className={
-                                                    styles.extensionButtonContainer
+                                                    styles.extensionButton
+                                                }
+                                                title={intl.formatMessage(
+                                                    messages.addExtension
+                                                )}
+                                                onClick={
+                                                    onExtensionButtonClick
                                                 }
                                             >
-                                                <button
+                                                <img
                                                     className={
-                                                        styles.extensionButton
+                                                        styles.extensionButtonIcon
                                                     }
-                                                    title={intl.formatMessage(
-                                                        messages.addExtension
-                                                    )}
-                                                    onClick={
-                                                        onExtensionButtonClick
-                                                    }
-                                                >
-                                                    <img
-                                                        className={
-                                                            styles.extensionButtonIcon
-                                                        }
-                                                        draggable={false}
-                                                        src={addExtensionIcon}
-                                                    />
-                                                </button>
-                                            </Box> */}
+                                                    draggable={false}
+                                                    src={addExtensionIcon}
+                                                />
+                                            </button>
+                                        </Box> */}
                                             <Box className={styles.watermark}>
                                                 <Watermark />
                                             </Box>
@@ -424,10 +425,10 @@ const GUIComponent = (props) => {
                                         </TabPanel>
                                     </Tabs>
                                     {/*
-                                    backpackVisible ? (
-                                        <Backpack host={backpackHost} />
-                                    ) : null
-                                */}
+                                backpackVisible ? (
+                                    <Backpack host={backpackHost} />
+                                ) : null
+                            */}
                                 </Box>
                                 <Box
                                     className={classNames(
@@ -438,17 +439,13 @@ const GUIComponent = (props) => {
                                             : styles.hideStage
                                     )}
                                 >
-                                    <StageWrapper
-                                        isFullScreen={isFullScreen}
-                                        isRendererSupported={
-                                            isRendererSupported
-                                        }
-                                        isRtl={isRtl}
-                                        stageSize={stageSize}
-                                        vm={vm}
-                                    />
                                     <Box className={styles.targetWrapper}>
                                         <TargetPane
+                                            isFullScreen={isFullScreen}
+                                            isRendererSupported={
+                                                isRendererSupported
+                                            }
+                                            isRtl={isRtl}
                                             stageSize={stageSize}
                                             vm={vm}
                                         />
