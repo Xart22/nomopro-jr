@@ -77,25 +77,6 @@ const SpriteSelectorComponent = function (props) {
     }
     return (
         <Box className={styles.spriteSelector} {...componentProps}>
-            <SpriteInfo
-                direction={selectedSprite.direction}
-                disabled={spriteInfoDisabled}
-                name={selectedSprite.name}
-                rotationStyle={selectedSprite.rotationStyle}
-                size={selectedSprite.size}
-                stageSize={stageSize}
-                visible={selectedSprite.visible}
-                x={selectedSprite.x}
-                y={selectedSprite.y}
-                onChangeDirection={onChangeSpriteDirection}
-                onChangeName={onChangeSpriteName}
-                onChangeRotationStyle={onChangeSpriteRotationStyle}
-                onChangeSize={onChangeSpriteSize}
-                onChangeVisibility={onChangeSpriteVisibility}
-                onChangeX={onChangeSpriteX}
-                onChangeY={onChangeSpriteY}
-            />
-
             <SpriteList
                 editingTarget={editingTarget}
                 hoveredTarget={hoveredTarget}

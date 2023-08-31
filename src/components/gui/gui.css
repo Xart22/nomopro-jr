@@ -234,6 +234,7 @@
     */
     /* TODO this also breaks the thermometer menu */
     /* overflow: hidden; */
+    flex-direction: row;
 }
 
 .extension-button-container {

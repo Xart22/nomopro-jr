@@ -11,11 +11,6 @@
     user-select: none;
 }
 
-.stage-wrapper {
-    margin: auto;
-    margin-right: 8px;
-}
-
 .stage-wrapper.full-screen {
     position: fixed;
     top: $stage-menu-height;

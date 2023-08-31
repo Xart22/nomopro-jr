@@ -18,7 +18,6 @@ $header-height: calc($stage-menu-height - 2px);
     border-color: $ui-black-transparent;
     border-width: 1px;
     border-style: solid;
-    border-bottom: 0;
     cursor: pointer;
     transition: all 0.25s ease;
 }
