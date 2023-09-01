@@ -1,5 +1,9 @@
 import ScratchBlocks from "openblock-blocks";
-
+import motionIcon from "./assets/BUTTON_MOTION.png";
+import eventIcon from "./assets/BUTTON_EVENT.png";
+import controlIcon from "./assets/BUTTON_CONTROL.png";
+import looksIcon from "./assets/BUTTON_LOOKS.png";
+import soundIcon from "./assets/BUTTON_SOUND.png";
 const categorySeparator = '<sep gap="36"/>';
 
 const blockSeparator = '<sep gap="36"/>'; // At default scale, about 28px
@@ -11,7 +15,7 @@ const motion = function (isInitialSetup, isStage, targetId) {
         "Stage selected: no motion blocks"
     );
     return `
-    <category name="%{BKY_CATEGORY_MOTION}" id="motion" colour="#4C97FF" secondaryColour="#3373CC">
+    <category  name="%{BKY_CATEGORY_MOTION}" id="motion" colour="#4C97FF" secondaryColour="#3373CC" iconURI="${motionIcon}">
         ${
             isStage
                 ? `
@@ -101,7 +105,7 @@ const looks = function (
     const hello = ScratchBlocks.ScratchMsgs.translate("LOOKS_HELLO", "Hello!");
     const hmm = ScratchBlocks.ScratchMsgs.translate("LOOKS_HMM", "Hmm...");
     return `
-    <category name="%{BKY_CATEGORY_LOOKS}" id="looks" colour="#9966FF" secondaryColour="#774DCB">
+    <category name="%{BKY_CATEGORY_LOOKS}" id="looks" colour="#9966FF" secondaryColour="#774DCB" iconURI="${looksIcon}">
         ${
             isStage
                 ? ""
@@ -210,7 +214,7 @@ const looks = function (
 
 const sound = function (isInitialSetup, isStage, targetId, soundName) {
     return `
-    <category name="%{BKY_CATEGORY_SOUND}" id="sound" colour="#D65CD6" secondaryColour="#BD42BD">
+    <category name="%{BKY_CATEGORY_SOUND}" id="sound" colour="#D65CD6" secondaryColour="#BD42BD" iconURI="${soundIcon}">
         <block id="${targetId}_sound_play" type="sound_play">
             <value name="SOUND_MENU">
                 <shadow type="sound_sounds_menu">
@@ -226,7 +230,7 @@ const sound = function (isInitialSetup, isStage, targetId, soundName) {
 
 const events = function (isInitialSetup, isStage) {
     return `
-    <category name="%{BKY_CATEGORY_EVENTS}" id="events" colour="#FFD500" secondaryColour="#CC9900">
+    <category name="%{BKY_CATEGORY_EVENTS}" id="events" colour="#FFD500" secondaryColour="#CC9900" iconURI="${eventIcon}">
         <block type="event_whenflagclicked"/>
         ${
             isStage
@@ -254,7 +258,7 @@ const events = function (isInitialSetup, isStage) {
 
 const control = function (isInitialSetup, isStage) {
     return `
-    <category name="%{BKY_CATEGORY_CONTROL}" id="control" colour="#FFAB19" secondaryColour="#CF8B17">
+    <category name="%{BKY_CATEGORY_CONTROL}" id="control" colour="#FFAB19" secondaryColour="#CF8B17" iconURI="${controlIcon}">
         <block type="control_wait">
             <value name="DURATION">
                 <shadow type="math_positive_number">
@@ -285,7 +289,7 @@ const sensing = function (isInitialSetup, isStage) {
         "What's your name?"
     );
     return `
-    <category name="%{BKY_CATEGORY_SENSING}" id="sensing" colour="#4CBFE6" secondaryColour="#2E8EB8">
+    <category name="%{BKY_CATEGORY_SENSING}" id="sensing" colour="#4CBFE6" secondaryColour="#2E8EB8" iconURI="${soundIcon}">
         ${
             isStage
                 ? ""

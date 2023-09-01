@@ -29,6 +29,7 @@
     font-weight: bold;
     background-color: $motion-primary;
     color: $ui-white;
+    border: 3px solid coral;
 }
 
 .main-menu {

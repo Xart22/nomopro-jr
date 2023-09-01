@@ -608,84 +608,6 @@ class MenuBar extends React.Component {
                                 src={fileIcon}
                                 onClick={this.props.onStartSelectingFileUpload}
                             />
-<<<<<<< HEAD
-=======
-                            <MenuBarMenu
-                                className={classNames(styles.menuBarMenu)}
-                                open={this.props.fileMenuOpen}
-                                place={this.props.isRtl ? "left" : "right"}
-                                onRequestClose={this.props.onRequestCloseFile}
-                            >
-                                <MenuSection>
-                                    <MenuItem
-                                        isRtl={this.props.isRtl}
-                                        onClick={this.handleClickNew}
-                                    >
-                                        {newProjectMessage}
-                                    </MenuItem>
-                                </MenuSection>
-                                {(this.props.canSave ||
-                                    this.props.canCreateCopy ||
-                                    this.props.canRemix) && (
-                                    <MenuSection>
-                                        {this.props.canSave && (
-                                            <MenuItem
-                                                onClick={this.handleClickSave}
-                                            >
-                                                {saveNowMessage}
-                                            </MenuItem>
-                                        )}
-                                        {this.props.canCreateCopy && (
-                                            <MenuItem
-                                                onClick={
-                                                    this.handleClickSaveAsCopy
-                                                }
-                                            >
-                                                {createCopyMessage}
-                                            </MenuItem>
-                                        )}
-                                        {this.props.canRemix && (
-                                            <MenuItem
-                                                onClick={this.handleClickRemix}
-                                            >
-                                                {remixMessage}
-                                            </MenuItem>
-                                        )}
-                                    </MenuSection>
-                                )}
-                                <MenuSection>
-                                    <MenuItem
-                                        onClick={
-                                            this.props
-                                                .onStartSelectingFileUpload
-                                        }
-                                    >
-                                        {this.props.intl.formatMessage(
-                                            sharedMessages.loadFromComputerTitle
-                                        )}
-                                    </MenuItem>
-                                    {/* <SB3Downloader>
-                                        {(
-                                            className,
-                                            downloadProjectCallback
-                                        ) => (
-                                            <MenuItem
-                                                className={className}
-                                                onClick={this.getSaveToComputerHandler(
-                                                    downloadProjectCallback
-                                                )}
-                                            >
-                                                <FormattedMessage
-                                                    defaultMessage="Save to your computer"
-                                                    description="Menu bar item for downloading a project to your computer" // eslint-disable-line max-len
-                                                    id="gui.menuBar.downloadToComputer"
-                                                />
-                                            </MenuItem>
-                                        )}
-                                    </SB3Downloader> */}
-                                </MenuSection>
-                            </MenuBarMenu>
->>>>>>> 2a7e36901f69d3a136c29378ac7f69d5d7b5f16e
                         </div>
                     )}
                     <div
@@ -735,84 +657,9 @@ class MenuBar extends React.Component {
                                     </MenuItem>
                                 )}
                             </DeletionRestorer>
-<<<<<<< HEAD
                         </MenuBarMenu>
                     </div>
                     <Divider className={classNames(styles.divider)} />
-=======
-                            {/* <MenuSection>
-                                <TurboMode>
-                                    {(toggleTurboMode, { turboMode }) => (
-                                        <MenuItem onClick={toggleTurboMode}>
-                                            {turboMode ? (
-                                                <FormattedMessage
-                                                    defaultMessage="Turn off Turbo Mode"
-                                                    description="Menu bar item for turning off turbo mode"
-                                                    id="gui.menuBar.turboModeOff"
-                                                />
-                                            ) : (
-                                                <FormattedMessage
-                                                    defaultMessage="Turn on Turbo Mode"
-                                                    description="Menu bar item for turning on turbo mode"
-                                                    id="gui.menuBar.turboModeOn"
-                                                />
-                                            )}
-                                        </MenuItem>
-                                    )}
-                                </TurboMode>
-                            </MenuSection> */}
-                        </MenuBarMenu>
-                    </div>
-                    <div style={{ padding: "10vw" }} />
-
-                    <div className={styles.fileMenu}>
-                        {this.props.canEditTitle ? (
-                            <div
-                                className={classNames(
-                                    styles.menuBarItem,
-                                    styles.growable
-                                )}
-                            >
-                                <MenuBarItemTooltip enable id="title-field">
-                                    <ProjectTitleInput
-                                        className={classNames(
-                                            styles.titleFieldGrowable
-                                        )}
-                                    />
-                                </MenuBarItemTooltip>
-                            </div>
-                        ) : this.props.authorUsername &&
-                          this.props.authorUsername !== this.props.username ? (
-                            <AuthorInfo
-                                className={styles.authorInfo}
-                                imageUrl={this.props.authorThumbnailUrl}
-                                projectTitle={this.props.projectTitle}
-                                userId={this.props.authorId}
-                                username={this.props.authorUsername}
-                            />
-                        ) : null}
-                        {this.props.canManageFiles && (
-                            <SB3Downloader>
-                                {(className, downloadProjectCallback) => (
-                                    <div
-                                        className={classNames(
-                                            styles.menuBarItem,
-                                            styles.hoverable
-                                        )}
-                                        onClick={this.getSaveToComputerHandler(
-                                            downloadProjectCallback
-                                        )}
-                                    >
-                                        <img
-                                            className={styles.saveIcon}
-                                            src={saveIcon}
-                                        />
-                                    </div>
-                                )}
-                            </SB3Downloader>
-                        )}
-                    </div>
->>>>>>> 2a7e36901f69d3a136c29378ac7f69d5d7b5f16e
                     {/* <div
                         className={classNames(
                             styles.menuBarItem,
