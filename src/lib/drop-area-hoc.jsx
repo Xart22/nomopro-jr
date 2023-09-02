@@ -33,6 +33,7 @@ const DropAreaHOC = function (dragTypes) {
      * @returns {React.Component} component with drag over/drop behavior
      */
     return function (WrappedComponent) {
+        console.log(WrappedComponent);
         class DropAreaWrapper extends React.Component {
             constructor(props) {
                 super(props);

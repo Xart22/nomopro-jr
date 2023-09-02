@@ -59,7 +59,6 @@ const DroppableBlocks = DropAreaHOC([DragConstants.BACKPACK_CODE])(
     BlocksComponent
 );
 
-console.log(DroppableBlocks);
 class Blocks extends React.Component {
     constructor(props) {
         super(props);

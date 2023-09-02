@@ -284,7 +284,10 @@ const GUIComponent = (props) => {
 
                         <Box className={styles.bodyWrapper}>
                             <Box className={styles.flexWrapper}>
-                                <Box className={styles.editorWrapper}>
+                                <Box
+                                    className={styles.editorWrapper}
+                                    id="editorWrapper"
+                                >
                                     <Tabs
                                         forceRenderTabPanel
                                         className={tabClassNames.tabs}
@@ -438,6 +441,7 @@ const GUIComponent = (props) => {
                                             ? styles.showStage
                                             : styles.hideStage
                                     )}
+                                    id="stageWrapper"
                                 >
                                     <Box className={styles.targetWrapper}>
                                         <TargetPane
