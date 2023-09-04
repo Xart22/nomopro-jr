@@ -128,3 +128,8 @@
     display: flex;
     flex-direction: row !important;
 }
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+    .stage-menu-wrapper {
+        height: 420px;
+    }
+}

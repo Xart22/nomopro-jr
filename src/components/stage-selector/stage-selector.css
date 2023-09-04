@@ -127,3 +127,10 @@ $header-height: calc($stage-menu-height - 2px);
         box-shadow: none;
     }
 }
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+    .stage-selector {
+        flex-grow: unset;
+        width: 5vw;
+        margin-left: 25vw;
+    }
+}
