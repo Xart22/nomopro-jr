@@ -4,19 +4,22 @@
     /* Makes columns for the sprite library selector + and the stage selector */
     display: flex;
     flex-direction: row;
-    flex-grow: 0.5;
+
+    justify-content: start;
+    width: 100%;
 }
 
 .stage-selector-wrapper {
     display: flex;
-    flex-basis: 72px;
+    flex-basis: 80px;
     flex-shrink: 0;
+    margin-left: 25vw;
 }
 
-[dir="ltr"] .stage-selector-wrapper {
+/* [dir="ltr"] .stage-selector-wrapper {
     margin-left: calc($space / 2);
 }
 
 [dir="rtl"] .stage-selector-wrapper {
     margin-right: calc($space / 2);
-}
+} */

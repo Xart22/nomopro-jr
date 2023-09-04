@@ -29,7 +29,7 @@ const StageWrapperComponent = function (props) {
                 {isRendererSupported ? (
                     <Stage stageSize={stageSize} vm={vm} />
                 ) : null}
-            </Box>
+            </Box>{" "}
             <Box className={styles.stageMenuWrapper}>
                 <StageHeader stageSize={stageSize} vm={vm} />
             </Box>

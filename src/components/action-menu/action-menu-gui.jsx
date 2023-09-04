@@ -4,7 +4,7 @@ import classNames from "classnames";
 import bindAll from "lodash.bindall";
 import ReactTooltip from "react-tooltip";
 
-import styles from "./action-menu.css";
+import styles from "./action-menu-gui.css";
 
 const CLOSE_DELAY = 300; // ms
 
@@ -113,10 +113,11 @@ class ActionMenu extends React.Component {
 
         return (
             <div
-                className={classNames(styles.menuContainer, className, {
-                    [styles.expanded]: this.state.isOpen,
-                    [styles.forceHidden]: this.state.forceHide,
-                })}
+                className={styles.menuContainer}
+                // className={classNames(styles.menuContainer, className, {
+                //     [styles.expanded]: this.state.isOpen,
+                //     [styles.forceHidden]: this.state.forceHide,
+                // })}
                 ref={this.setContainerRef}
                 onMouseEnter={this.handleToggleOpenState}
                 onMouseLeave={this.handleClosePopover}
@@ -141,80 +142,70 @@ class ActionMenu extends React.Component {
                     id={this.mainTooltipId}
                     place={tooltipPlace || "left"}
                 />
-                <div className={styles.moreButtonsOuter}>
-                    <div className={styles.moreButtons}>
-                        {(moreButtons || []).map(
-                            (
-                                {
-                                    img,
-                                    title,
-                                    onClick: handleClick,
-                                    fileAccept,
-                                    fileChange,
-                                    fileInput,
-                                    fileMultiple,
-                                },
-                                keyId
-                            ) => {
-                                const isComingSoon = !handleClick;
-                                const hasFileInput = fileInput;
-                                const tooltipId = `${this.mainTooltipId}-${title}`;
-                                return (
-                                    <div key={`${tooltipId}-${keyId}`}>
-                                        <button
-                                            aria-label={title}
-                                            className={classNames(
-                                                styles.button,
-                                                styles.moreButton,
-                                                {
-                                                    [styles.comingSoon]:
-                                                        isComingSoon,
-                                                }
-                                            )}
-                                            data-for={tooltipId}
-                                            data-tip={title}
-                                            onClick={
-                                                hasFileInput
-                                                    ? handleClick
-                                                    : this.clickDelayer(
-                                                          handleClick
-                                                      )
-                                            }
-                                        >
-                                            <img
-                                                className={styles.moreIcon}
-                                                draggable={false}
-                                                src={img}
-                                            />
-                                            {hasFileInput ? (
-                                                <input
-                                                    accept={fileAccept}
-                                                    className={styles.fileInput}
-                                                    multiple={fileMultiple}
-                                                    ref={fileInput}
-                                                    type="file"
-                                                    onChange={fileChange}
-                                                />
-                                            ) : null}
-                                        </button>
-                                        <ReactTooltip
-                                            className={classNames(
-                                                styles.tooltip,
-                                                {
-                                                    [styles.comingSoonTooltip]:
-                                                        isComingSoon,
-                                                }
-                                            )}
-                                            effect="solid"
-                                            id={tooltipId}
-                                            place={tooltipPlace || "left"}
+
+                {(moreButtons || []).map(
+                    (
+                        {
+                            img,
+                            title,
+                            onClick: handleClick,
+                            fileAccept,
+                            fileChange,
+                            fileInput,
+                            fileMultiple,
+                            color,
+                        },
+                        keyId
+                    ) => {
+                        const isComingSoon = !handleClick;
+                        const hasFileInput = fileInput;
+                        const tooltipId = `${this.mainTooltipId}-${title}`;
+                        return (
+                            <div key={`${tooltipId}-${keyId}`}>
+                                <button
+                                    aria-label={title}
+                                    className={classNames(
+                                        styles.button,
+                                        styles.mainButton
+                                    )}
+                                    data-for={tooltipId}
+                                    data-tip={title}
+                                    onClick={
+                                        hasFileInput
+                                            ? handleClick
+                                            : this.clickDelayer(handleClick)
+                                    }
+                                    style={{ backgroundColor: color }}
+                                >
+                                    <img
+                                        className={styles.moreIcon}
+                                        draggable={false}
+                                        src={img}
+                                    />
+                                    {hasFileInput ? (
+                                        <input
+                                            accept={fileAccept}
+                                            className={styles.fileInput}
+                                            multiple={fileMultiple}
+                                            ref={fileInput}
+                                            type="file"
+                                            onChange={fileChange}
                                         />
-                                    </div>
-                                );
-                            }
-                        )}
-                    </div>
-                </div>
+                                    ) : null}
+                                </button>
+                                <ReactTooltip
+                                    className={classNames(styles.tooltip, {
+                                        [styles.comingSoonTooltip]:
+                                            isComingSoon,
+                                    })}
+                                    effect="solid"
+                                    id={tooltipId}
+                                    place={tooltipPlace || "left"}
+                                />
+                            </div>
+                        );
+                    }
+                )}
             </div>
         );
     }

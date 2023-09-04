@@ -20,11 +20,22 @@
     margin: auto;
     justify-content: space-between;
     flex-shrink: 0;
-    height: 360px;
     padding-left: $space;
     padding-right: $space;
     flex-direction: column;
     position: relative;
+    height: 480px;
+}
+
+.stage-menu-wrapper-full {
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    flex-shrink: 0;
+    align-items: center;
+    height: $stage-menu-height;
+    padding-top: $space;
+    padding-bottom: $space;
 }
 
 .embed-scratch-logo img {
@@ -111,4 +122,9 @@
 .device-realtime-connection-off {
     filter: saturate(0);
     opacity: 0.5;
+}
+
+.control-container {
+    display: flex;
+    flex-direction: row !important;
 }

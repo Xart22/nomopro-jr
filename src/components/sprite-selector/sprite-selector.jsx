@@ -5,7 +5,7 @@ import { defineMessages, injectIntl, intlShape } from "react-intl";
 import Box from "../box/box.jsx";
 import SpriteInfo from "../../containers/sprite-info.jsx";
 import SpriteList from "./sprite-list.jsx";
-import ActionMenu from "../action-menu/action-menu.jsx";
+import ActionMenuGui from "../action-menu/action-menu-gui.jsx";
 import { STAGE_DISPLAY_SIZES } from "../../lib/layout-constants";
 import { isRtl } from "openblock-l10n";
 
@@ -76,20 +76,22 @@ const SpriteSelectorComponent = function (props) {
         spriteInfoDisabled = true;
     }
     return (
-        <Box className={styles.spriteSelector} {...componentProps}>
-            <SpriteList
-                editingTarget={editingTarget}
-                hoveredTarget={hoveredTarget}
-                items={Object.keys(sprites).map((id) => sprites[id])}
-                raised={raised}
-                selectedId={selectedId}
-                onDeleteSprite={onDeleteSprite}
-                onDrop={onDrop}
-                onDuplicateSprite={onDuplicateSprite}
-                onExportSprite={onExportSprite}
-                onSelectSprite={onSelectSprite}
-            />
-            <ActionMenu
+        <div className={styles.spriteSelectorContainer}>
+            <Box className={styles.spriteSelector} {...componentProps}>
+                <SpriteList
+                    editingTarget={editingTarget}
+                    hoveredTarget={hoveredTarget}
+                    items={Object.keys(sprites).map((id) => sprites[id])}
+                    raised={raised}
+                    selectedId={selectedId}
+                    onDeleteSprite={onDeleteSprite}
+                    onDrop={onDrop}
+                    onDuplicateSprite={onDuplicateSprite}
+                    onExportSprite={onExportSprite}
+                    onSelectSprite={onSelectSprite}
+                />
+            </Box>
+            <ActionMenuGui
                 className={styles.addButton}
                 img={spriteIcon}
                 moreButtons={[
@@ -115,19 +117,12 @@ const SpriteSelectorComponent = function (props) {
                         img: paintIcon,
                         onClick: onPaintSpriteClick, // TODO need real function for this
                     },
-                    {
-                        title: intl.formatMessage(
-                            messages.addSpriteFromLibrary
-                        ),
-                        img: searchIcon,
-                        onClick: onNewSpriteClick,
-                    },
                 ]}
                 title={intl.formatMessage(messages.addSpriteFromLibrary)}
-                tooltipPlace={isRtl(intl.locale) ? "right" : "left"}
+                tooltipPlace={"top"}
                 onClick={onNewSpriteClick}
             />
-        </Box>
+        </div>
     );
 };
 

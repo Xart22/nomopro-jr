@@ -67,13 +67,11 @@
 .blocks :global(.blocklyFlyout) {
     border-right: 1px solid $ui-black-transparent;
     box-sizing: content-box;
-    width: 400px !important;
     display: none;
 }
 .blocks :global(.blocklyBlockCanvas) {
     display: flex;
     flex-direction: row;
-    background-color: red !important;
 }
 .blocks :global(.blocklyFlyoutScrollbar) {
     display: none;

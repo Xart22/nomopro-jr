@@ -85,6 +85,7 @@ const TargetPane = ({
             stageSize={stageSize}
             vm={vm}
         />
+
         <div className={styles.stageSelectorWrapper}>
             {stage.id && (
                 <StageSelector

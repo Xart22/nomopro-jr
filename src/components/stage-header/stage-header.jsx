@@ -67,6 +67,7 @@ const StageHeaderComponent = function (props) {
     let header = null;
 
     if (isFullScreen) {
+        console.log(isFullScreen);
         const stageDimensions = getStageDimensions(null, true);
         const stageButton = showBranding ? (
             <div className={styles.embedScratchLogo}>
@@ -98,10 +99,10 @@ const StageHeaderComponent = function (props) {
         header = (
             <Box className={styles.stageHeaderWrapperOverlay}>
                 <Box
-                    className={styles.stageMenuWrapper}
+                    className={styles.stageMenuWrapperFull}
                     style={{ width: stageDimensions.width }}
                 >
-                    <Controls vm={vm} />
+                    <Controls vm={vm} className={styles.controlContainer} />
                     {stageButton}
                 </Box>
             </Box>
