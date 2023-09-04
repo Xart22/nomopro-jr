@@ -24,7 +24,7 @@
     padding-right: $space;
     flex-direction: column;
     position: relative;
-    height: 480px;
+    height: 420px;
 }
 
 .stage-menu-wrapper-full {

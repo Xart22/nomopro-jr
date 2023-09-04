@@ -203,6 +203,7 @@
 }
 
 .stage-and-target-wrapper {
+    margin: 30px 0;
     /*
         Makes rows for children:
           1) stage menu
