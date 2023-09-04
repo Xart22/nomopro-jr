@@ -338,3 +338,25 @@ $fade-out-distance: 15px;
     padding-right: 0;
     overflow: hidden;
 }
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+    .stage-and-target-wrapper {
+        /*
+            Makes rows for children:
+              1) stage menu
+              2) stage
+              3) sprite/stage selectors
+            Only reason we need this, is so .targetWrapper, which holds the selectors,
+            goes to full vertical height of the window
+        */
+        display: flex;
+        flex-direction: row;
+        /* pad entire wrapper to the left and right; allow children to fill width */
+        padding-left: $space;
+        padding-right: $space;
+
+        /* this will only ever be as wide as the stage */
+        flex-basis: 0;
+
+        transform: scale(0.9);
+    }
+}

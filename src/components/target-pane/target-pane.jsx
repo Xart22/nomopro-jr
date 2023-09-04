@@ -86,25 +86,23 @@ const TargetPane = ({
             vm={vm}
         />
 
-        <div className={styles.stageSelectorWrapper}>
-            {stage.id && (
-                <StageSelector
-                    asset={stage.costume && stage.costume.asset}
-                    backdropCount={stage.costumeCount}
-                    id={stage.id}
-                    selected={stage.id === editingTarget}
-                    onSelect={onSelectSprite}
+        {stage.id && (
+            <StageSelector
+                asset={stage.costume && stage.costume.asset}
+                backdropCount={stage.costumeCount}
+                id={stage.id}
+                selected={stage.id === editingTarget}
+                onSelect={onSelectSprite}
+            />
+        )}
+        <div>
+            {spriteLibraryVisible ? (
+                <SpriteLibrary
+                    vm={vm}
+                    onActivateBlocksTab={onActivateBlocksTab}
+                    onRequestClose={onRequestCloseSpriteLibrary}
                 />
-            )}
-            <div>
-                {spriteLibraryVisible ? (
-                    <SpriteLibrary
-                        vm={vm}
-                        onActivateBlocksTab={onActivateBlocksTab}
-                        onRequestClose={onRequestCloseSpriteLibrary}
-                    />
-                ) : null}
-            </div>
+            ) : null}
         </div>
     </div>
 );
