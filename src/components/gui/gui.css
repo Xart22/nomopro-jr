@@ -345,4 +345,7 @@ $fade-out-distance: 15px;
     .blocks-wrapper {
         height: 35vh;
     }
+    .tabs {
+        margin-top: 10px;
+    }
 }
