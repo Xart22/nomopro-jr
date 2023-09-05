@@ -1,3 +1,5 @@
+import { windows } from "bowser";
+
 const SET_FULL_SCREEN = "scratch-gui/mode/SET_FULL_SCREEN";
 const SET_PLAYER = "scratch-gui/mode/SET_PLAYER";
 
@@ -27,6 +29,10 @@ const reducer = function (state, action) {
 };
 
 const setFullScreen = function (isFullScreen) {
+    const stage = document.getElementById("stageWrapper");
+
+    console.log(stage.classList[0].st);
+
     return {
         type: SET_FULL_SCREEN,
         isFullScreen: isFullScreen,

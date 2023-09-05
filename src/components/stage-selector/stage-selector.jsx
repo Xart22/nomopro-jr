@@ -10,10 +10,8 @@ import {
 import ReactTooltip from "react-tooltip";
 
 import Box from "../box/box.jsx";
-import ActionMenu from "../action-menu/action-menu.jsx";
-import ActionMenuUpload from "../action-menu/action-menu-upload.jsx";
+import ActionMenuGui from "../action-menu/action-menu-gui.jsx";
 import styles from "./stage-selector.css";
-import stylesBtn from "../action-menu/action-menu.css";
 import { isRtl } from "openblock-l10n";
 
 import backdropIcon from "../action-menu/icon--backdrop.svg";
@@ -68,72 +66,67 @@ const StageSelector = (props) => {
     } = props;
     const tooltipId = `tooltip-${Math.random()}`;
     return (
-        <Box
-            className={classNames(styles.stageSelector, {
-                [styles.isSelected]: selected,
-                [styles.raised]: raised || dragOver,
-                [styles.receivedBlocks]: receivedBlocks,
-            })}
-            componentRef={containerRef}
-            onClick={onClick}
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
-            {...componentProps}
-        >
-            <div key={`${tooltipId}-up`}>
-                <button
-                    aria-label={intl.formatMessage(
-                        messages.addBackdropFromFile
-                    )}
-                    className={classNames(
-                        stylesBtn.button,
-                        stylesBtn.mainButton,
-                        {}
-                    )}
-                    data-for={tooltipId}
-                    data-tip={intl.formatMessage(messages.addBackdropFromFile)}
-                    onClick={onBackdropFileUploadClick}
-                >
-                    <img
-                        className={stylesBtn.moreIcon}
-                        draggable={false}
-                        src={fileUploadIcon}
-                    />
-
-                    <input
-                        accept={".svg, .png, .bmp, .jpg, .jpeg, .gif"}
-                        className={stylesBtn.fileInput}
-                        multiple={true}
-                        ref={fileInputRef}
-                        type="file"
-                        onChange={onBackdropFileUpload}
-                    />
-                </button>
-                <ReactTooltip
-                    className={classNames(stylesBtn.tooltip, {})}
-                    effect="solid"
-                    id={tooltipId}
-                    place={"left"}
-                />
-            </div>
-            {url ? <img className={styles.costumeCanvas} src={url} /> : null}
-            <div className={styles.label}>
-                <FormattedMessage
-                    defaultMessage="Backdrops"
-                    description="Label for the backdrops in the stage selector"
-                    id="gui.stageSelector.backdrops"
-                />
-            </div>
-
-            <div className={styles.count}>{backdropCount}</div>
-            <ActionMenu
+        <div className={styles.stageSelectorContainer}>
+            <ActionMenuGui
                 className={styles.addButton}
                 img={backdropIcon}
+                moreButtons={[
+                    {
+                        title: intl.formatMessage(messages.addBackdropFromFile),
+                        img: fileUploadIcon,
+                        onClick: onBackdropFileUploadClick,
+                        fileAccept: ".svg, .png, .bmp, .jpg, .jpeg, .gif",
+                        fileChange: onBackdropFileUpload,
+                        fileInput: fileInputRef,
+                        fileMultiple: true,
+                        color: "#BD42BD",
+                    },
+                    {
+                        title: intl.formatMessage(
+                            messages.addBackdropFromSurprise
+                        ),
+                        img: surpriseIcon,
+                        onClick: onSurpriseBackdropClick,
+                        color: "#9966FF",
+                    },
+                    {
+                        title: intl.formatMessage(
+                            messages.addBackdropFromPaint
+                        ),
+                        img: paintIcon,
+                        onClick: onEmptyBackdropClick,
+                        color: "#3373CC",
+                    },
+                ]}
                 title={intl.formatMessage(messages.addBackdropFromLibrary)}
                 tooltipPlace={isRtl(intl.locale) ? "right" : "left"}
                 onClick={onNewBackdropClick}
             />
-        </Box>
+            <Box
+                className={classNames(styles.stageSelector, {
+                    [styles.isSelected]: selected,
+                    [styles.raised]: raised || dragOver,
+                    [styles.receivedBlocks]: receivedBlocks,
+                })}
+                componentRef={containerRef}
+                onClick={onClick}
+                onMouseEnter={onMouseEnter}
+                onMouseLeave={onMouseLeave}
+                {...componentProps}
+            >
+                {url ? (
+                    <img className={styles.costumeCanvas} src={url} />
+                ) : null}
+                <div className={styles.label}>
+                    <FormattedMessage
+                        defaultMessage="Backdrops"
+                        description="Label for the backdrops in the stage selector"
+                        id="gui.stageSelector.backdrops"
+                    />
+                </div>
+                <div className={styles.count}>{backdropCount}</div>
+            </Box>
+        </div>
     );
 };
 

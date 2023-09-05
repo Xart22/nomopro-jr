@@ -104,6 +104,7 @@ const SpriteSelectorComponent = function (props) {
                         fileChange: onSpriteUpload,
                         fileInput: spriteFileInput,
                         fileMultiple: true,
+                        color: "#BD42BD",
                     },
                     {
                         title: intl.formatMessage(
@@ -111,11 +112,13 @@ const SpriteSelectorComponent = function (props) {
                         ),
                         img: surpriseIcon,
                         onClick: onSurpriseSpriteClick, // TODO need real function for this
+                        color: "#9966FF",
                     },
                     {
                         title: intl.formatMessage(messages.addSpriteFromPaint),
                         img: paintIcon,
                         onClick: onPaintSpriteClick, // TODO need real function for this
+                        color: "#3373CC",
                     },
                 ]}
                 title={intl.formatMessage(messages.addSpriteFromLibrary)}

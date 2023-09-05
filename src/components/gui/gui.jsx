@@ -437,6 +437,7 @@ const GUIComponent = (props) => {
                                     className={classNames(
                                         styles.stageAndTargetWrapper,
                                         styles[stageSize],
+                                        styles.scale,
                                         isRealtimeMode
                                             ? styles.showStage
                                             : styles.hideStage

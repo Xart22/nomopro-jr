@@ -3,6 +3,14 @@
 
 $header-height: calc($stage-menu-height - 2px);
 
+.stage-selector-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 10px;
+    width: 30vw;
+}
+
 .stage-selector {
     background-clip: padding-box;
     display: flex;
@@ -20,7 +28,7 @@ $header-height: calc($stage-menu-height - 2px);
     transition: all 0.25s ease;
     padding-top: 20px;
     width: 5vw;
-    margin-left: 30vw;
+    margin-left: calc($space / 2);
 }
 
 .stage-selector.is-selected {
@@ -131,7 +139,6 @@ $header-height: calc($stage-menu-height - 2px);
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
     .stage-selector {
         flex-grow: unset;
-        width: 100px;
-        margin-left: calc(8vw);
+        width: 82px;
     }
 }

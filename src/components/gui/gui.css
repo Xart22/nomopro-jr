@@ -124,7 +124,7 @@
 }
 
 .tab.is-selected {
-    height: 90%;
+    height: 100%;
     color: $motion-primary;
     background-color: $ui-white;
     z-index: 4; /* Make sure selected is always above */
@@ -200,10 +200,11 @@
 .blocks-wrapper {
     flex-grow: 1;
     position: relative;
+    height: calc((50vh - $menu-bar-height) - $space);
 }
 
 .stage-and-target-wrapper {
-    margin: 30px 0;
+    margin-top: 10px;
     /*
         Makes rows for children:
           1) stage menu
@@ -220,14 +221,13 @@
 
     /* this will only ever be as wide as the stage */
     flex-basis: 0;
+    width: 100% !important;
 }
 
 .target-wrapper {
     display: flex;
     flex-grow: 1;
     flex-basis: 0;
-
-    padding-top: $space;
     min-height: 0; /* this makes it work in Firefox */
 
     /*
@@ -237,6 +237,7 @@
     /* TODO this also breaks the thermometer menu */
     /* overflow: hidden; */
     flex-direction: row;
+    width: 100% !important;
 }
 
 .extension-button-container {
@@ -339,42 +340,12 @@ $fade-out-distance: 15px;
     padding-right: 0;
     overflow: hidden;
 }
+
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
-    .stage-and-target-wrapper {
-        /*
-            Makes rows for children:
-              1) stage menu
-              2) stage
-              3) sprite/stage selectors
-            Only reason we need this, is so .targetWrapper, which holds the selectors,
-            goes to full vertical height of the window
-        */
-        display: flex;
-        flex-direction: row;
-        /* pad entire wrapper to the left and right; allow children to fill width */
-        padding-left: $space;
-        padding-right: $space;
-
-        /* this will only ever be as wide as the stage */
-        flex-basis: 0;
-
-        transform: scale(0.9);
+    .scale {
+        transform: scale(0.91);
     }
-    .flex-wrapper {
-        display: flex;
-
-        /*
-            Make 2 columns:
-            a) for the blocks + workspace panes, and
-            b) for combined stage menu + stage + sprite/stage selectors
-        */
-        flex-direction: column-reverse;
-        height: 100%;
-        /*
-            Stop scrollbar popping in and out from openblock-blocks border issue
-            https://github.com/LLK/scratch-gui/issues/318
-        */
-        overflow-y: hidden;
-        justify-content: start;
+    .blocks-wrapper {
+        height: 40vh;
     }
 }
