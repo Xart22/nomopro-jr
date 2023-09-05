@@ -4,7 +4,6 @@
 
 .blocks {
     height: 100%;
-    width: 50%;
 }
 
 .drag-over:after {
@@ -67,14 +66,6 @@
 .blocks :global(.blocklyFlyout) {
     border-right: 1px solid $ui-black-transparent;
     box-sizing: content-box;
-    display: none;
-}
-.blocks :global(.blocklyBlockCanvas) {
-    display: flex;
-    flex-direction: row;
-}
-.blocks :global(.blocklyFlyoutScrollbar) {
-    display: none;
 }
 
 [dir="rtl"] .blocks :global(.blocklyFlyout) {

@@ -23,12 +23,7 @@
 } */
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
     .target-pane {
-        /* Makes columns for the sprite library selector + and the stage selector */
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 100vw;
-        height: 52vh;
+        height: 50vh;
     }
     .stage-selector-wrapper {
         display: flex;
