@@ -4,12 +4,11 @@
 
 .page-wrapper {
     height: 100%;
-    zoom: 1;
 }
 
 .body-wrapper {
-    height: calc(100% - $menu-bar-height);
     background-color: #f8bc5c;
+    height: calc(100% - $menu-bar-height);
 }
 
 .body-wrapper * {
@@ -200,7 +199,6 @@
 .blocks-wrapper {
     flex-grow: 1;
     position: relative;
-    height: calc((50vh - $menu-bar-height) - $space);
 }
 
 .stage-and-target-wrapper {

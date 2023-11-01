@@ -376,7 +376,8 @@ class MenuBar extends React.Component {
     }
     handleConnectionMouseUp() {
         if (this.props.deviceId) {
-            this.props.onOpenConnectionModal();
+            this.props.vm.scanForPeripheral(this.props.deviceId);
+            //this.props.onOpenConnectionModal();
         } else {
             this.props.onDeviceIsEmpty();
         }
@@ -660,7 +661,7 @@ class MenuBar extends React.Component {
                         </MenuBarMenu>
                     </div>
                     <Divider className={classNames(styles.divider)} />
-                    {/* <div
+                    <div
                         className={classNames(
                             styles.menuBarItem,
                             styles.hoverable
@@ -677,8 +678,8 @@ class MenuBar extends React.Component {
                                 id="gui.menuBar.noDeviceSelected"
                             />
                         )}
-                    </div> */}
-                    {/* <Divider className={classNames(styles.divider)} />
+                    </div>
+                    <Divider className={classNames(styles.divider)} />
                     <div
                         className={classNames(
                             styles.menuBarItem,
@@ -707,7 +708,7 @@ class MenuBar extends React.Component {
                                 />
                             </React.Fragment>
                         )}
-                    </div> */}
+                    </div>
                     {/* <div
                         className={classNames(styles.menuBarItem)}
                     >

@@ -7,15 +7,14 @@ $more-button-size: 2.25rem;
 
 .menu-container {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column-reverse;
     transition: 0.2s;
     justify-content: space-between;
     background-color: #8d9ce2;
     padding: 10px;
     border-radius: $space;
-    height: min-content;
+    height: 250px;
     margin: auto;
-    width: 300px;
 }
 
 .button {
