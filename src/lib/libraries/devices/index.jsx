@@ -84,119 +84,119 @@ const deviceData = [
         programLanguage: ["block"],
         tags: ["realtime"],
     },
-    // {
-    //     name: "Arduino Uno",
-    //     deviceId: "arduinoUno",
-    //     manufactor: "arduino.cc",
-    //     learnMore: "https://store.arduino.cc/usa/arduino-uno-rev3",
-    //     type: DeviceType.arduino,
-    //     iconURL: arduinoUnoIconURL,
-    //     description: (
-    //         <FormattedMessage
-    //             defaultMessage="A great board to get started with electronics and coding."
-    //             description="Description for the Arduino Uno device"
-    //             id="gui.device.arduinoUno.description"
-    //         />
-    //     ),
-    //     featured: true,
-    //     disabled: false,
-    //     bluetoothRequired: false,
-    //     serialportRequired: true,
-    //     defaultBaudRate: "9600",
-    //     internetConnectionRequired: false,
-    //     launchPeripheralConnectionFlow: false,
-    //     useAutoScan: false,
-    //     connectionIconURL: arduinoUnoConnectionIconURLL,
-    //     connectionSmallIconURL: arduinoUnoConnectionSmallIconURL,
-    //     connectingMessage: (
-    //         <FormattedMessage
-    //             defaultMessage="Connecting"
-    //             description="Message to help people connect to their device."
-    //             id="gui.device.arduinoUno.connectingMessage"
-    //         />
-    //     ),
-    //     baseToolBoxXml: arduinoBaseToolBox,
-    //     programMode: ["realtime"],
-    //     programLanguage: ["block"],
-    //     tags: ["arduino"],
-    //     helpLink: "https://store.arduino.cc/usa/arduino-uno-rev3",
-    // },
-    // {
-    //     name: "Arduino Nano",
-    //     deviceId: "arduinoNano",
-    //     manufactor: "arduino.cc",
-    //     learnMore: "https://store.arduino.cc/usa/arduino-nano",
-    //     type: DeviceType.arduino,
-    //     iconURL: arduinoNanoIconURL,
-    //     description: (
-    //         <FormattedMessage
-    //             defaultMessage="The Arduino Nano is a classic small board to build your projects with."
-    //             description="Description for the Arduino Nano device"
-    //             id="gui.device.arduinoNano.description"
-    //         />
-    //     ),
-    //     featured: true,
-    //     disabled: false,
-    //     bluetoothRequired: false,
-    //     serialportRequired: true,
-    //     defaultBaudRate: "9600",
-    //     internetConnectionRequired: false,
-    //     launchPeripheralConnectionFlow: false,
-    //     useAutoScan: false,
-    //     connectionIconURL: arduinoNanoConnectionIconURLL,
-    //     connectionSmallIconURL: arduinoNanoConnectionSmallIconURL,
-    //     connectingMessage: (
-    //         <FormattedMessage
-    //             defaultMessage="Connecting"
-    //             description="Message to help people connect to their device."
-    //             id="gui.device.arduinoNano.connectingMessage"
-    //         />
-    //     ),
-    //     baseToolBoxXml: arduinoBaseToolBox,
-    //     programMode: ["realtime"],
-    //     programLanguage: ["block"],
-    //     tags: ["arduino"],
-    //     helpLink: "https://store.arduino.cc/usa/arduino-nano",
-    // },
+    {
+        name: "Arduino Uno",
+        deviceId: "arduinoUno",
+        manufactor: "arduino.cc",
+        learnMore: "https://store.arduino.cc/usa/arduino-uno-rev3",
+        type: DeviceType.arduino,
+        iconURL: arduinoUnoIconURL,
+        description: (
+            <FormattedMessage
+                defaultMessage="A great board to get started with electronics and coding."
+                description="Description for the Arduino Uno device"
+                id="gui.device.arduinoUno.description"
+            />
+        ),
+        featured: true,
+        disabled: false,
+        bluetoothRequired: false,
+        serialportRequired: true,
+        defaultBaudRate: "9600",
+        internetConnectionRequired: false,
+        launchPeripheralConnectionFlow: false,
+        useAutoScan: false,
+        connectionIconURL: arduinoUnoConnectionIconURLL,
+        connectionSmallIconURL: arduinoUnoConnectionSmallIconURL,
+        connectingMessage: (
+            <FormattedMessage
+                defaultMessage="Connecting"
+                description="Message to help people connect to their device."
+                id="gui.device.arduinoUno.connectingMessage"
+            />
+        ),
+        baseToolBoxXml: arduinoBaseToolBox,
+        programMode: ["realtime"],
+        programLanguage: ["block"],
+        tags: ["arduino"],
+        helpLink: "https://store.arduino.cc/usa/arduino-uno-rev3",
+    },
+    {
+        name: "Arduino Nano",
+        deviceId: "arduinoNano",
+        manufactor: "arduino.cc",
+        learnMore: "https://store.arduino.cc/usa/arduino-nano",
+        type: DeviceType.arduino,
+        iconURL: arduinoNanoIconURL,
+        description: (
+            <FormattedMessage
+                defaultMessage="The Arduino Nano is a classic small board to build your projects with."
+                description="Description for the Arduino Nano device"
+                id="gui.device.arduinoNano.description"
+            />
+        ),
+        featured: true,
+        disabled: false,
+        bluetoothRequired: false,
+        serialportRequired: true,
+        defaultBaudRate: "9600",
+        internetConnectionRequired: false,
+        launchPeripheralConnectionFlow: false,
+        useAutoScan: false,
+        connectionIconURL: arduinoNanoConnectionIconURLL,
+        connectionSmallIconURL: arduinoNanoConnectionSmallIconURL,
+        connectingMessage: (
+            <FormattedMessage
+                defaultMessage="Connecting"
+                description="Message to help people connect to their device."
+                id="gui.device.arduinoNano.connectingMessage"
+            />
+        ),
+        baseToolBoxXml: arduinoBaseToolBox,
+        programMode: ["realtime"],
+        programLanguage: ["block"],
+        tags: ["arduino"],
+        helpLink: "https://store.arduino.cc/usa/arduino-nano",
+    },
 
-    // {
-    //     name: "ESP32",
-    //     deviceId: "arduinoEsp32",
-    //     manufactor: "espressif",
-    //     learnMore: "https://www.espressif.com/",
-    //     type: DeviceType.arduino,
-    //     iconURL: esp32IconURL,
-    //     description: (
-    //         <FormattedMessage
-    //             defaultMessage="Wi-Fi & Bluetooth control board with rich functions."
-    //             description="Description for the esp32 device"
-    //             id="gui.device.esp32.description"
-    //         />
-    //     ),
-    //     featured: true,
-    //     disabled: false,
-    //     bluetoothRequired: false,
-    //     serialportRequired: true,
-    //     defaultBaudRate: "115200",
-    //     internetConnectionRequired: false,
-    //     launchPeripheralConnectionFlow: false,
-    //     useAutoScan: false,
-    //     connectionIconURL: esp32ConnectionIconURLL,
-    //     connectionSmallIconURL: esp32ConnectionSmallIconURL,
-    //     connectingMessage: (
-    //         <FormattedMessage
-    //             defaultMessage="Connecting"
-    //             description="Message to help people connect to their esp32."
-    //             id="gui.device.esp32.connectingMessage"
-    //         />
-    //     ),
-    //     baseToolBoxXml: arduinoBaseToolBox,
-    //     programMode: ["upload", "realtime"],
-    //     programLanguage: ["block"],
-    //     tags: ["arduino"],
-    //     helpLink:
-    //         "https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/hw-reference/esp32/get-started-devkitc.html",
-    // },
+    {
+        name: "ESP32",
+        deviceId: "arduinoEsp32",
+        manufactor: "espressif",
+        learnMore: "https://www.espressif.com/",
+        type: DeviceType.arduino,
+        iconURL: esp32IconURL,
+        description: (
+            <FormattedMessage
+                defaultMessage="Wi-Fi & Bluetooth control board with rich functions."
+                description="Description for the esp32 device"
+                id="gui.device.esp32.description"
+            />
+        ),
+        featured: true,
+        disabled: false,
+        bluetoothRequired: false,
+        serialportRequired: true,
+        defaultBaudRate: "115200",
+        internetConnectionRequired: false,
+        launchPeripheralConnectionFlow: false,
+        useAutoScan: false,
+        connectionIconURL: esp32ConnectionIconURLL,
+        connectionSmallIconURL: esp32ConnectionSmallIconURL,
+        connectingMessage: (
+            <FormattedMessage
+                defaultMessage="Connecting"
+                description="Message to help people connect to their esp32."
+                id="gui.device.esp32.connectingMessage"
+            />
+        ),
+        baseToolBoxXml: arduinoBaseToolBox,
+        programMode: ["upload", "realtime"],
+        programLanguage: ["block"],
+        tags: ["arduino"],
+        helpLink:
+            "https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/hw-reference/esp32/get-started-devkitc.html",
+    },
 ];
 
 /**
