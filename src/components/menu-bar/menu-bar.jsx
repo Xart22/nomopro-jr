@@ -709,14 +709,12 @@ class MenuBar extends React.Component {
                             </React.Fragment>
                         )}
                     </div>
-                    {/* <div
-                        className={classNames(styles.menuBarItem)}
-                    >
+                    {/* <div className={classNames(styles.menuBarItem)}>
                         <img
                             className={classNames(styles.linkSocketIcon)}
                             src={linkSocketIcon}
                         />
-                    </div>*/}
+                    </div> */}
                 </div>
 
                 <div className={styles.tailMenu}>
@@ -778,16 +776,10 @@ class MenuBar extends React.Component {
                         />
                     </div>
                     <Divider className={classNames(styles.divider)} />
+                 */}
                     <div
-                        className={classNames(
-                            styles.menuBarItem,
-                            this.props.isRealtimeMode &&
-                                this.props.peripheralName
-                                ? styles.hoverable
-                                : styles.disabled
-                        )}
+                        className={classNames(styles.menuBarItem)}
                         onMouseUp={
-                            this.props.isRealtimeMode &&
                             this.props.peripheralName
                                 ? this.handleUploadFirmware
                                 : null
@@ -804,7 +796,7 @@ class MenuBar extends React.Component {
                             description="Button to upload the realtime firmware"
                             id="gui.menuBar.uploadFirmware"
                         />
-                    </div> */}
+                    </div>
                     <Divider className={classNames(styles.divider)} />
 
                     {this.props.canEditTitle ? (

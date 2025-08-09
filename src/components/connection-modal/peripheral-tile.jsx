@@ -1,23 +1,26 @@
-import {FormattedMessage} from 'react-intl';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import React from 'react';
-import bindAll from 'lodash.bindall';
-import Box from '../box/box.jsx';
+import { FormattedMessage } from "react-intl";
+import PropTypes from "prop-types";
+import classNames from "classnames";
+import React from "react";
+import bindAll from "lodash.bindall";
+import Box from "../box/box.jsx";
 
-import styles from './connection-modal.css';
+import styles from "./connection-modal.css";
 
 class PeripheralTile extends React.Component {
-    constructor (props) {
+    constructor(props) {
         super(props);
-        bindAll(this, [
-            'handleConnecting'
-        ]);
+        bindAll(this, ["handleConnecting"]);
     }
-    handleConnecting () {
+    handleConnecting() {
+        console.log(
+            "handleConnecting",
+            this.props.peripheralId,
+            this.props.name
+        );
         this.props.onConnecting(this.props.peripheralId, this.props.name);
     }
-    render () {
+    render() {
         return (
             <Box className={styles.peripheralTile}>
                 <Box className={styles.peripheralTileName}>
@@ -43,28 +46,27 @@ class PeripheralTile extends React.Component {
                         <Box className={styles.signalStrengthMeter}>
                             <div
                                 className={classNames(styles.signalBar, {
-                                    [styles.greenBar]: this.props.rssi > -80
+                                    [styles.greenBar]: this.props.rssi > -80,
                                 })}
                             />
                             <div
                                 className={classNames(styles.signalBar, {
-                                    [styles.greenBar]: this.props.rssi > -60
+                                    [styles.greenBar]: this.props.rssi > -60,
                                 })}
                             />
                             <div
                                 className={classNames(styles.signalBar, {
-                                    [styles.greenBar]: this.props.rssi > -40
+                                    [styles.greenBar]: this.props.rssi > -40,
                                 })}
                             />
                             <div
                                 className={classNames(styles.signalBar, {
-                                    [styles.greenBar]: this.props.rssi > -20
+                                    [styles.greenBar]: this.props.rssi > -20,
                                 })}
                             />
-                        </Box>)}
-                    <button
-                        onClick={this.handleConnecting}
-                    >
+                        </Box>
+                    )}
+                    <button onClick={this.handleConnecting}>
                         <FormattedMessage
                             defaultMessage="Connect"
                             description="Button to start connecting to a specific device"
@@ -83,7 +85,7 @@ PeripheralTile.propTypes = {
     name: PropTypes.string,
     onConnecting: PropTypes.func,
     peripheralId: PropTypes.string,
-    rssi: PropTypes.number
+    rssi: PropTypes.number,
 };
 
 export default PeripheralTile;
