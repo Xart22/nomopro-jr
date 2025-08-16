@@ -180,7 +180,7 @@ const deviceData = [
         serialportRequired: true,
         defaultBaudRate: "9600",
         internetConnectionRequired: false,
-        launchPeripheralConnectionFlow: false,
+        launchPeripheralConnectionFlow: true,
         useAutoScan: false,
         connectionIconURL: arduinoNanoConnectionIconURLL,
         connectionSmallIconURL: arduinoNanoConnectionSmallIconURL,
@@ -192,10 +192,12 @@ const deviceData = [
             />
         ),
         baseToolBoxXml: arduinoBaseToolBox,
-        programMode: ["realtime"],
-        programLanguage: ["block"],
+        programMode: ["realtime", "upload"],
+        programLanguage: ["block", "c", "cpp"],
         tags: ["arduino"],
         helpLink: "https://store.arduino.cc/usa/arduino-nano",
+        freeDevice: true,
+        nomoproSubsItem: false,
     },
 
     {
@@ -218,7 +220,7 @@ const deviceData = [
         serialportRequired: true,
         defaultBaudRate: "115200",
         internetConnectionRequired: false,
-        launchPeripheralConnectionFlow: false,
+        launchPeripheralConnectionFlow: true,
         useAutoScan: false,
         connectionIconURL: esp32ConnectionIconURLL,
         connectionSmallIconURL: esp32ConnectionSmallIconURL,
@@ -230,11 +232,13 @@ const deviceData = [
             />
         ),
         baseToolBoxXml: arduinoBaseToolBox,
-        programMode: ["upload", "realtime"],
-        programLanguage: ["block"],
+        programMode: ["realtime", "upload"],
+        programLanguage: ["block", "c", "cpp"],
         tags: ["arduino"],
         helpLink:
             "https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/hw-reference/esp32/get-started-devkitc.html",
+        freeDevice: true,
+        nomoproSubsItem: false,
     },
 ];
 
