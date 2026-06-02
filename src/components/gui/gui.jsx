@@ -164,6 +164,7 @@ const GUIComponent = (props) => {
     if (isRendererSupported === null) {
         isRendererSupported = Renderer.isSupported();
     }
+    console.log("connectionModalVisible", connectionModalVisible);
 
     return (
         <MediaQuery minWidth={layout.fullSizeMinWidth}>

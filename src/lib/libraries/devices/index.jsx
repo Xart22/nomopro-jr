@@ -84,6 +84,43 @@ const deviceData = [
         programLanguage: ["block"],
         tags: ["realtime"],
     },
+    // {
+    //     name: "Arduino Uno",
+    //     deviceId: "arduinoUno",
+    //     manufactor: "arduino.cc",
+    //     learnMore: "https://store.arduino.cc/usa/arduino-uno-rev3",
+    //     type: DeviceType.arduino,
+    //     iconURL: arduinoUnoIconURL,
+    //     description: (
+    //         <FormattedMessage
+    //             defaultMessage="A great board to get started with electronics and coding."
+    //             description="Description for the Arduino Uno device"
+    //             id="gui.device.arduinoUno.description"
+    //         />
+    //     ),
+    //     featured: true,
+    //     disabled: false,
+    //     bluetoothRequired: false,
+    //     serialportRequired: true,
+    //     defaultBaudRate: "9600",
+    //     internetConnectionRequired: false,
+    //     launchPeripheralConnectionFlow: false,
+    //     useAutoScan: false,
+    //     connectionIconURL: arduinoUnoConnectionIconURLL,
+    //     connectionSmallIconURL: arduinoUnoConnectionSmallIconURL,
+    //     connectingMessage: (
+    //         <FormattedMessage
+    //             defaultMessage="Connecting"
+    //             description="Message to help people connect to their device."
+    //             id="gui.device.arduinoUno.connectingMessage"
+    //         />
+    //     ),
+    //     baseToolBoxXml: arduinoBaseToolBox,
+    //     programMode: ["realtime"],
+    //     programLanguage: ["block"],
+    //     tags: ["arduino"],
+    //     helpLink: "https://store.arduino.cc/usa/arduino-uno-rev3",
+    // },
     {
         name: "Arduino Uno",
         deviceId: "arduinoUno",
@@ -104,7 +141,7 @@ const deviceData = [
         serialportRequired: true,
         defaultBaudRate: "9600",
         internetConnectionRequired: false,
-        launchPeripheralConnectionFlow: false,
+        launchPeripheralConnectionFlow: true,
         useAutoScan: false,
         connectionIconURL: arduinoUnoConnectionIconURLL,
         connectionSmallIconURL: arduinoUnoConnectionSmallIconURL,
@@ -116,10 +153,12 @@ const deviceData = [
             />
         ),
         baseToolBoxXml: arduinoBaseToolBox,
-        programMode: ["realtime"],
-        programLanguage: ["block"],
+        programMode: ["realtime", "upload"],
+        programLanguage: ["block", "c", "cpp"],
         tags: ["arduino"],
         helpLink: "https://store.arduino.cc/usa/arduino-uno-rev3",
+        freeDevice: true,
+        nomoproSubsItem: false,
     },
     {
         name: "Arduino Nano",
@@ -141,7 +180,7 @@ const deviceData = [
         serialportRequired: true,
         defaultBaudRate: "9600",
         internetConnectionRequired: false,
-        launchPeripheralConnectionFlow: false,
+        launchPeripheralConnectionFlow: true,
         useAutoScan: false,
         connectionIconURL: arduinoNanoConnectionIconURLL,
         connectionSmallIconURL: arduinoNanoConnectionSmallIconURL,
@@ -153,10 +192,12 @@ const deviceData = [
             />
         ),
         baseToolBoxXml: arduinoBaseToolBox,
-        programMode: ["realtime"],
-        programLanguage: ["block"],
+        programMode: ["realtime", "upload"],
+        programLanguage: ["block", "c", "cpp"],
         tags: ["arduino"],
         helpLink: "https://store.arduino.cc/usa/arduino-nano",
+        freeDevice: true,
+        nomoproSubsItem: false,
     },
 
     {
@@ -179,7 +220,7 @@ const deviceData = [
         serialportRequired: true,
         defaultBaudRate: "115200",
         internetConnectionRequired: false,
-        launchPeripheralConnectionFlow: false,
+        launchPeripheralConnectionFlow: true,
         useAutoScan: false,
         connectionIconURL: esp32ConnectionIconURLL,
         connectionSmallIconURL: esp32ConnectionSmallIconURL,
@@ -191,11 +232,13 @@ const deviceData = [
             />
         ),
         baseToolBoxXml: arduinoBaseToolBox,
-        programMode: ["upload", "realtime"],
-        programLanguage: ["block"],
+        programMode: ["realtime", "upload"],
+        programLanguage: ["block", "c", "cpp"],
         tags: ["arduino"],
         helpLink:
             "https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/hw-reference/esp32/get-started-devkitc.html",
+        freeDevice: true,
+        nomoproSubsItem: false,
     },
 ];
 
