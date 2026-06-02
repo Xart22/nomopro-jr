@@ -208,6 +208,7 @@ class MenuBar extends React.Component {
     constructor(props) {
         super(props);
         bindAll(this, [
+            "handleClickBack",
             "handleClickNew",
             "handleClickRemix",
             "handleClickOpenCommunity",
@@ -246,6 +247,11 @@ class MenuBar extends React.Component {
             "PROGRAM_MODE_UPDATE",
             this.handleProgramModeUpdate
         );
+    }
+    handleClickBack() {
+        if (window.parent && window.parent !== window) {
+            window.parent.postMessage({type: "closeJuniorContent"}, "*");
+        }
     }
     handleClickNew() {
         // if the project is dirty, and user owns the project, we will autosave.
@@ -573,6 +579,19 @@ class MenuBar extends React.Component {
                             onClick={this.props.onClickLogo}
                         />
                     </div>
+                    <div
+                        className={classNames(
+                            styles.menuBarItem,
+                            styles.hoverable
+                        )}
+                        onClick={this.handleClickBack}
+                    >
+                        <FormattedMessage
+                            defaultMessage="← Back"
+                            description="Menu bar item for going back to landing page"
+                            id="gui.menuBar.back"
+                        />
+                    </div>
                     {this.props.canChangeLanguage && (
                         <div
                             className={classNames(
@@ -687,27 +706,13 @@ class MenuBar extends React.Component {
                         )}
                         onMouseUp={this.handleConnectionMouseUp}
                     >
-                        {this.props.peripheralName ? (
-                            <React.Fragment>
-                                <img
-                                    className={styles.connectedIcon}
-                                    src={connectedIcon}
-                                />
-                                {this.props.peripheralName}
-                            </React.Fragment>
-                        ) : (
-                            <React.Fragment>
-                                <img
-                                    className={styles.unconnectedIcon}
-                                    src={unconnectedIcon}
-                                />
-                                <FormattedMessage
-                                    defaultMessage="Unconnected"
-                                    description="Text for menubar unconnected button"
-                                    id="gui.menuBar.noConnection"
-                                />
-                            </React.Fragment>
-                        )}
+                        <React.Fragment>
+                            <img
+                                className={styles.connectedIcon}
+                                src={connectedIcon}
+                            />
+                            {this.props.peripheralName}
+                        </React.Fragment>
                     </div>
                     {/* <div
                         className={classNames(styles.menuBarItem)}
