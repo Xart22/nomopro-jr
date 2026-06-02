@@ -241,16 +241,16 @@ class MenuBar extends React.Component {
         document.removeEventListener("keydown", this.handleKeyPress);
         this.props.vm.removeListener(
             "PERIPHERAL_DISCONNECTED",
-            this.props.onDisconnect
+            this.props.onDisconnect,
         );
         this.props.vm.removeListener(
             "PROGRAM_MODE_UPDATE",
-            this.handleProgramModeUpdate
+            this.handleProgramModeUpdate,
         );
     }
     handleClickBack() {
         if (window.parent && window.parent !== window) {
-            window.parent.postMessage({type: "closeJuniorContent"}, "*");
+            window.parent.postMessage({ type: "closeJuniorContent" }, "*");
         }
     }
     handleClickNew() {
@@ -260,12 +260,12 @@ class MenuBar extends React.Component {
         // Note that if user is logged in and editing someone else's project,
         // they'll lose their work.
         const readyToReplaceProject = this.props.confirmReadyToReplaceProject(
-            this.props.intl.formatMessage(sharedMessages.replaceProjectWarning)
+            this.props.intl.formatMessage(sharedMessages.replaceProjectWarning),
         );
         this.props.onRequestCloseFile();
         if (readyToReplaceProject) {
             this.props.onClickNew(
-                this.props.canSave && this.props.canCreateNew
+                this.props.canSave && this.props.canCreateNew,
             );
         }
         this.props.onRequestCloseFile();
@@ -326,7 +326,7 @@ class MenuBar extends React.Component {
                 const metadata = collectMetadata(
                     this.props.vm,
                     this.props.projectTitle,
-                    this.props.locale
+                    this.props.locale,
                 );
                 this.props.onProjectTelemetryEvent("projectDidSave", metadata);
             }
@@ -390,7 +390,7 @@ class MenuBar extends React.Component {
     }
     handleSelectDeviceMouseUp() {
         const blocks = document.querySelector(
-            ".blocklyWorkspace .blocklyBlockCanvas"
+            ".blocklyWorkspace .blocklyBlockCanvas",
         );
         if (blocks.getBBox().height === 0) {
             this.props.onOpenDeviceLibrary();
@@ -430,7 +430,7 @@ class MenuBar extends React.Component {
     }
     handleScreenshot() {
         const blocks = document.querySelector(
-            ".blocklyWorkspace .blocklyBlockCanvas"
+            ".blocklyWorkspace .blocklyBlockCanvas",
         );
         if (blocks.getBBox().height === 0) {
             this.props.onWorkspaceIsEmpty();
@@ -439,8 +439,8 @@ class MenuBar extends React.Component {
             const scale = parseFloat(
                 transform.substring(
                     transform.indexOf("scale") + 6,
-                    transform.length - 1
-                )
+                    transform.length - 1,
+                ),
             );
             const data = new Date();
 
@@ -454,7 +454,7 @@ class MenuBar extends React.Component {
                     width: blocks.getBBox().width * scale,
                     scale: 2 / scale,
                     encoderOptions: 1,
-                }
+                },
             );
         }
     }
@@ -466,7 +466,7 @@ class MenuBar extends React.Component {
     }
     handleClearCache() {
         const readyClearCache = this.props.confirmClearCache(
-            this.props.intl.formatMessage(sharedMessages.clearCacheWarning)
+            this.props.intl.formatMessage(sharedMessages.clearCacheWarning),
         );
         if (readyClearCache) {
             this.props.onClickClearCache();
@@ -582,14 +582,14 @@ class MenuBar extends React.Component {
                     <div
                         className={classNames(
                             styles.menuBarItem,
-                            styles.hoverable
+                            styles.hoverable,
                         )}
                         onClick={this.handleClickBack}
                     >
                         <FormattedMessage
-                            defaultMessage="← Back"
-                            description="Menu bar item for going back to landing page"
-                            id="gui.menuBar.back"
+                            defaultMessage="New"
+                            description="Menu bar item for creating a new project"
+                            id="gui.menuBar.new"
                         />
                     </div>
                     {this.props.canChangeLanguage && (
@@ -597,7 +597,7 @@ class MenuBar extends React.Component {
                             className={classNames(
                                 styles.menuBarItem,
                                 styles.hoverable,
-                                styles.languageMenu
+                                styles.languageMenu,
                             )}
                         >
                             <div>
@@ -612,7 +612,7 @@ class MenuBar extends React.Component {
                             </div>
                             <LanguageSelector
                                 label={this.props.intl.formatMessage(
-                                    ariaMessages.language
+                                    ariaMessages.language,
                                 )}
                             />
                         </div>
@@ -636,7 +636,7 @@ class MenuBar extends React.Component {
                             this.props.isRealtimeMode
                                 ? styles.hoverable
                                 : styles.disabled,
-                            { [styles.active]: this.props.editMenuOpen }
+                            { [styles.active]: this.props.editMenuOpen },
                         )}
                         onMouseUp={
                             this.props.isRealtimeMode
@@ -663,14 +663,14 @@ class MenuBar extends React.Component {
                             <DeletionRestorer>
                                 {(
                                     handleRestore,
-                                    { restorable, deletedItem }
+                                    { restorable, deletedItem },
                                 ) => (
                                     <MenuItem
                                         className={classNames({
                                             [styles.disabled]: !restorable,
                                         })}
                                         onClick={this.handleRestoreOption(
-                                            handleRestore
+                                            handleRestore,
                                         )}
                                     >
                                         {this.restoreOptionMessage(deletedItem)}
@@ -683,7 +683,7 @@ class MenuBar extends React.Component {
                     <div
                         className={classNames(
                             styles.menuBarItem,
-                            styles.hoverable
+                            styles.hoverable,
                         )}
                         onMouseUp={this.handleSelectDeviceMouseUp}
                     >
@@ -702,7 +702,7 @@ class MenuBar extends React.Component {
                     <div
                         className={classNames(
                             styles.menuBarItem,
-                            styles.hoverable
+                            styles.hoverable,
                         )}
                         onMouseUp={this.handleConnectionMouseUp}
                     >
@@ -808,13 +808,13 @@ class MenuBar extends React.Component {
                         <div
                             className={classNames(
                                 styles.menuBarItem,
-                                styles.growable
+                                styles.growable,
                             )}
                         >
                             <MenuBarItemTooltip enable id="title-field">
                                 <ProjectTitleInput
                                     className={classNames(
-                                        styles.titleFieldGrowable
+                                        styles.titleFieldGrowable,
                                     )}
                                 />
                             </MenuBarItemTooltip>
@@ -835,10 +835,10 @@ class MenuBar extends React.Component {
                                 <div
                                     className={classNames(
                                         styles.menuBarItem,
-                                        styles.hoverable
+                                        styles.hoverable,
                                     )}
                                     onClick={this.getSaveToComputerHandler(
-                                        downloadProjectCallback
+                                        downloadProjectCallback,
                                     )}
                                 >
                                     <img
@@ -947,7 +947,7 @@ MenuBar.propTypes = {
             PropTypes.shape({
                 title: PropTypes.string, // text for the menu item
                 onClick: PropTypes.func, // call this callback when the menu item is clicked
-            })
+            }),
         ),
     ]),
     onClickAccount: PropTypes.func,
@@ -1101,5 +1101,5 @@ const mapDispatchToProps = (dispatch) => ({
 export default compose(
     injectIntl,
     MenuBarHOC,
-    connect(mapStateToProps, mapDispatchToProps)
+    connect(mapStateToProps, mapDispatchToProps),
 )(MenuBar);
